@@ -29,8 +29,6 @@ if st.button("Predict"):
         input_data = pd.DataFrame({
             'Pregnancies': [pregnancies],
             'Glucose': [glucose],
-            'BloodPressure': [blood_pressure],
-            'SkinThickness': [skin_thickness],
             'Insulin': [insulin],
             'BMI': [bmi],
             'DiabetesPedigreeFunction': [dpf],
