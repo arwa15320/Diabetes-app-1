@@ -3,7 +3,7 @@ import pickle
 
 
 # load pkl file
-with open('model_diabetes.pkl', 'rb') as file:
+with open('Model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 #title the page
