@@ -24,7 +24,7 @@ age = st.number_input("Age", min_value=0, max_value=120, value=33)
 if st.button("Predict"):
     try:
         # Load the model
-        with open('/mnt/data/Model.pkl', 'rb') as file:
+        with open('Model.pkl', 'rb') as file:
             model = pickle.load(file)
         
         # Create a DataFrame for the input features
