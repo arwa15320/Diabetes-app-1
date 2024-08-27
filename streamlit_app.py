@@ -38,7 +38,7 @@ if st.button("Predict"):
 
     # Predict the outcome
     try:
-        prediction = model.predict(input_data_array)
+        prediction = diabetes_model (1).predict(input_data_array)
         
         # Display the result
         if prediction[0] == 1:
