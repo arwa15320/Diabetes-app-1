@@ -1,8 +1,10 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import joblib
 
-
+# Load the trained model
+model = joblib.load('C:\Users\Ecc\Downloads/diabetes_model (1).pkl')
 
 # Streamlit app title
 st.title("Diabetes Prediction")
