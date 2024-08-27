@@ -1,8 +1,10 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import joblib
 
-
+# Load the trained model
+model = joblib.load('/mnt/data/diabetes_model (1).pkl')
 
 # Streamlit app title
 st.title("Diabetes Prediction")
@@ -33,11 +35,18 @@ if st.button("Predict"):
         'Age': [age]
     })
 
-    # Predict the outcome
-    prediction = model.predict(input_data)
+    # Convert DataFrame to NumPy array (if necessary)
+    input_data_array = input_data.values
 
-    # Display the result
-    if prediction[0] == 1:
-        st.write("The model predicts that the person **has diabetes**.")
-    else:
-        st.write("The model predicts that the person **does not have diabetes**.")
+    # Predict the outcome
+    try:
+        prediction = model.predict(input_data_array)
+        
+        # Display the result
+        if prediction[0] == 1:
+            st.write("The model predicts that the person **has diabetes**.")
+        else:
+            st.write("The model predicts that the person **does not have diabetes**.")
+    
+    except Exception as e:
+        st.write(f"An error occurred: {e}")
